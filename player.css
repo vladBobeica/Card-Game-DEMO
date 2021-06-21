@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.wrapper {
+  /* align-items: center; */
+  background-color: #35363f;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+/* --- Remove upper code --- */
+
+.player {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  width: 80%;
+}
+
+.player::before {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  bottom: 7%;
+  content: "";
+  height: 80%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.player > * + * {
+  margin-left: 3.5%;
+}
+
+.player__info,
+.player__game-stats {
+  flex: 1 1 0px;
+  margin-bottom: 3.5%;
+}
+
+.player__info {
+  align-self: flex-end;
+  color: #ffffff;
+  text-align: right;
+  text-shadow: 0px 2px 1px rgba(27, 36, 53, 1);
+}
+
+.player__username {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.player__location {
+  font-size: 12px;
+}
+
+.player__avatar {
+  align-items: center;
+  background-image: url(images/avatar_border.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  height: 14vw;
+  justify-content: center;
+  max-height: 148px;
+  max-width: 148px;
+  position: relative;
+  transform-style: preserve-3d;
+  width: 14vw;
+}
+
+.player__rank {
+  left: 0;
+  max-width: 28px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-35%, -50%);
+  width: 3vw;
+}
+
+.player__rank-img {
+  display: block;
+  width: 100%;
+}
+
+.player__avatar__mask {
+  border-radius: 50%;
+  overflow: hidden;
+  height: 90%;
+  transform: translateZ(-10px);
+  width: 90%;
+}
+
+.player__mask-img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.player__game-stats {
+  align-self: flex-end;
+}
+
+.player__score {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.player__points {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.player__combinations {
+  font-size: 12px;
+}
+
+.player__combinations:after {
+  content: ".";
+  visibility: hidden;
+}
